@@ -4,6 +4,10 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import axios from "axios";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const SignupForm = () => {
   const [formValues, setFormValues] = useState({
@@ -25,7 +29,6 @@ export const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formValues.name.trim() || !formValues.companyName.trim() || !formValues.city.trim() || !formValues.whatsapp.trim()) {
       toast.error("Please fill in all fields.");
       return;
@@ -33,21 +36,18 @@ export const SignupForm = () => {
 
     setLoading(true);
 
-    // Mock submission - simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-      
-      // Store in localStorage for mock persistence
-      const existingEntries = JSON.parse(localStorage.getItem("siteboard_signups") || "[]");
-      existingEntries.push({
-        ...formValues,
-        submittedAt: new Date().toISOString(),
+      await axios.post(`${API}/signups`, {
+        name: formValues.name,
+        company_name: formValues.companyName,
+        city: formValues.city,
+        whatsapp: formValues.whatsapp,
       });
-      localStorage.setItem("siteboard_signups", JSON.stringify(existingEntries));
 
       setSubmitted(true);
       toast.success("You're on the list! We'll reach out soon.");
     } catch (err) {
+      console.error(err);
       toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
