@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { formData } from "../data/mock";
 import { Input } from "./ui/input";
@@ -5,9 +7,7 @@ import { Label } from "./ui/label";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import axios from "axios";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { API } from "../lib/api";
 
 export const SignupForm = () => {
   const [formValues, setFormValues] = useState({
