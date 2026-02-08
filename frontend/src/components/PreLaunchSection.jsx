@@ -1,3 +1,5 @@
+"use client";
+
 import { preLaunchData } from "../data/mock";
 import { Sparkles } from "lucide-react";
 import { Badge } from "./ui/badge";
