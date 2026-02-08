@@ -1,6 +1,9 @@
 import { heroData, siteConfig } from "../data/mock";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Badge } from "./ui/badge";
+import { BuildingSkyline } from "./graphics/RealEstateGraphics";
+
+const BUILDING_IMG = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80&auto=format";
 
 export const HeroSection = () => {
   const scrollToForm = () => {
@@ -15,20 +18,32 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center bg-white overflow-hidden">
-      {/* Subtle grid pattern - real estate plot grid feel */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      {/* Subtle real estate image overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={BUILDING_IMG}
+          alt=""
+          className="w-full h-full object-cover opacity-[0.03]"
+        />
+      </div>
+
+      {/* Grid pattern - plot layout feel */}
+      <div className="absolute inset-0 opacity-[0.025]">
         <div
           className="w-full h-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, #1565C0 1px, transparent 0)",
-            backgroundSize: "48px 48px",
+              "linear-gradient(#1565C0 1px, transparent 1px), linear-gradient(90deg, #1565C0 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
       </div>
 
       {/* Soft glow */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50 rounded-full blur-3xl opacity-40" />
+
+      {/* Building skyline at bottom */}
+      <BuildingSkyline className="absolute bottom-0 left-0 right-0 w-full h-48 text-[#1565C0]" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <Badge
@@ -62,7 +77,7 @@ export const HeroSection = () => {
       {/* Scroll indicator */}
       <button
         onClick={scrollToProblems}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-slate-300 hover:text-slate-500 transition-colors duration-200 cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-slate-300 hover:text-slate-500 transition-colors duration-200 cursor-pointer"
       >
         <span className="text-xs tracking-wider uppercase">Learn more</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
