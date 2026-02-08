@@ -21,7 +21,7 @@ export const ProblemSection = () => {
     >
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium uppercase tracking-widest text-teal-700 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-[#1565C0] mb-3">
             The Problem
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">

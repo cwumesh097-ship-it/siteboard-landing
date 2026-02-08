@@ -6,7 +6,7 @@ export const SolutionSection = () => {
     <section className="py-24 sm:py-32 bg-white">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium uppercase tracking-widest text-teal-700 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-[#1565C0] mb-3">
             The Solution
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-6">
@@ -54,7 +54,7 @@ export const SolutionSection = () => {
                 <p className="text-sm font-semibold text-slate-800">Green Valley Layout</p>
                 <p className="text-xs text-slate-400 mt-0.5">24 plots · Phase 1</p>
               </div>
-              <div className="text-xs text-slate-400 bg-white px-3 py-1 rounded-full border border-gray-100">
+              <div className="text-xs text-[#1565C0] font-medium bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
                 Live
               </div>
             </div>

@@ -29,7 +29,7 @@ export const PreLaunchSection = () => {
 
         <button
           onClick={scrollToForm}
-          className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-teal-700 bg-teal-50 rounded-xl border border-teal-100 hover:bg-teal-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-[#1565C0] bg-blue-50 rounded-xl border border-blue-100 hover:bg-blue-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
         >
           Apply for Early Access
         </button>

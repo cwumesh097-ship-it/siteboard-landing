@@ -15,25 +15,25 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center bg-white overflow-hidden">
-      {/* Subtle background pattern */}
+      {/* Subtle grid pattern - real estate plot grid feel */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
           className="w-full h-full"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, #0F766E 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, #1565C0 1px, transparent 0)",
             backgroundSize: "48px 48px",
           }}
         />
       </div>
 
       {/* Soft glow */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-teal-50 rounded-full blur-3xl opacity-40" />
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-50 rounded-full blur-3xl opacity-40" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <Badge
           variant="secondary"
-          className="mb-8 px-4 py-1.5 text-xs font-medium tracking-wide uppercase bg-teal-50 text-teal-700 border border-teal-100 hover:bg-teal-50"
+          className="mb-8 px-4 py-1.5 text-xs font-medium tracking-wide uppercase bg-blue-50 text-[#1565C0] border border-blue-100 hover:bg-blue-50"
         >
           {siteConfig.tagline}
         </Badge>
@@ -48,7 +48,7 @@ export const HeroSection = () => {
 
         <button
           onClick={scrollToForm}
-          className="group inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-teal-700 rounded-xl hover:bg-teal-800 transition-all duration-200 shadow-lg shadow-teal-700/20 hover:shadow-xl hover:shadow-teal-700/30 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          className="group inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-white bg-[#1565C0] rounded-xl hover:bg-[#0D47A1] transition-all duration-200 shadow-lg shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
         >
           {heroData.cta}
           <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
