@@ -126,6 +126,21 @@ async def get_signup_stats(session: AsyncSession = Depends(get_session)):
         recent_signups=recent,
     )
 
+# Admin login
+ADMIN_EMAIL = "info@aiclex.in"
+ADMIN_PASSWORD = "Umesh@2003##**"
+
+class AdminLogin(BaseModel):
+    email: str
+    password: str
+
+@api_router.post("/admin/login")
+async def admin_login(data: AdminLogin):
+    if data.email == ADMIN_EMAIL and data.password == ADMIN_PASSWORD:
+        return {"success": True, "message": "Login successful"}
+    raise HTTPException(status_code=401, detail="Invalid credentials")
+
+
 @api_router.delete("/signups/{signup_id}")
 async def delete_signup(signup_id: str, session: AsyncSession = Depends(get_session)):
     result = await session.execute(select(Signup).where(Signup.id == signup_id))
