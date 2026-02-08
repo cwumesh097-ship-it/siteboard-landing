@@ -1,3 +1,5 @@
+"use client";
+
 import { heroData, siteConfig } from "../data/mock";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Badge } from "./ui/badge";
