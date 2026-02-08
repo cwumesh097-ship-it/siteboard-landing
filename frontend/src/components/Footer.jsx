@@ -7,11 +7,11 @@ export const Footer = () => {
     <footer className="bg-[#0D1B2A] py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-5">
+          <div className="mb-5 bg-white rounded-lg px-4 py-2 inline-block">
             <img
               src={LOGO_URL}
               alt={siteConfig.name}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-8 w-auto object-contain"
             />
           </div>
 
