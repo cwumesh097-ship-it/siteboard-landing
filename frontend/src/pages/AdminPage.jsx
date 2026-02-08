@@ -226,7 +226,7 @@ const AdminDashboard = ({ onLogout }) => {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <img src={LOGO_URL} alt="SiteBoard" className="h-9 w-auto object-contain" />
+            <img src={LOGO_URL} alt="SiteBoard" className="h-14 w-auto object-contain" />
             <div className="w-px h-6 bg-gray-200" />
             <div className="flex items-center gap-2">
               <Building2 className="w-4 h-4 text-[#1565C0]" />
