@@ -1,12 +1,14 @@
+"use client";
+
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { siteConfig } from "../data/mock";
-import { useNavigate } from "react-router-dom";
 
 const LOGO_URL = "https://customer-assets.emergentagent.com/job_real-estate-preview/artifacts/tjyon02e_ChatGPT%20Image%20Feb%208%2C%202026%2C%2002_18_41%20PM.png";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +32,7 @@ export const Header = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <button onClick={() => navigate("/")} className="flex items-center gap-1 cursor-pointer">
+        <button onClick={() => router.push("/")} className="flex items-center gap-1 cursor-pointer">
           <img
             src={LOGO_URL}
             alt={siteConfig.name}
