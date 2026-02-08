@@ -34,7 +34,7 @@ export const Header = () => {
           <img
             src={LOGO_URL}
             alt={siteConfig.name}
-            className="h-11 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </button>
         <button
