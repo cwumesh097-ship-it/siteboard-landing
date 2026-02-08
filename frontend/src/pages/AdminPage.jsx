@@ -66,7 +66,7 @@ const AdminLoginForm = ({ onLogin }) => {
           <img
             src={LOGO_URL}
             alt="SiteBoard"
-            className="h-12 w-auto object-contain mx-auto mb-5"
+            className="h-16 w-auto object-contain mx-auto mb-5"
           />
           <h1 className="text-2xl font-bold text-slate-900 mb-1">Admin Login</h1>
           <p className="text-sm text-slate-500">Sign in to access the leads dashboard</p>
