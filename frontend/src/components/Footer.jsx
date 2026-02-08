@@ -15,6 +15,16 @@ export const Footer = () => {
             />
           </div>
 
+          <div className="flex items-center gap-5 mb-5 text-sm text-slate-400">
+            <a href="mailto:info@siteboard.in" className="hover:text-white transition-colors">
+              info@siteboard.in
+            </a>
+            <span className="w-px h-4 bg-slate-700" />
+            <a href="tel:+919871881183" className="hover:text-white transition-colors">
+              +91 98718 81183
+            </a>
+          </div>
+
           <p className="text-sm text-slate-400 mb-1">
             {footerData.copyright}
           </p>
