@@ -17,9 +17,21 @@ export const ProblemSection = () => {
   return (
     <section
       id="problem-section"
-      className="py-24 sm:py-32 bg-slate-50"
+      className="py-24 sm:py-32 bg-slate-50 relative overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto px-6">
+      {/* Decorative plot outline */}
+      <div className="absolute bottom-0 left-0 w-48 h-48 opacity-[0.04]">
+        <svg viewBox="0 0 200 200" fill="none">
+          <rect x="10" y="10" width="80" height="60" rx="4" stroke="#DC2626" strokeWidth="2" strokeDasharray="6 4" />
+          <rect x="100" y="10" width="80" height="60" rx="4" stroke="#16A34A" strokeWidth="2" />
+          <rect x="10" y="80" width="80" height="60" rx="4" stroke="#CA8A04" strokeWidth="2" />
+          <rect x="100" y="80" width="80" height="60" rx="4" stroke="#DC2626" strokeWidth="2" strokeDasharray="6 4" />
+          <rect x="10" y="150" width="80" height="40" rx="4" stroke="#16A34A" strokeWidth="2" />
+          <rect x="100" y="150" width="80" height="40" rx="4" stroke="#CA8A04" strokeWidth="2" />
+        </svg>
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-sm font-medium uppercase tracking-widest text-[#1565C0] mb-3">
             The Problem
