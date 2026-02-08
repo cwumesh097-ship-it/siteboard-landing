@@ -1,10 +1,24 @@
 import { solutionData } from "../data/mock";
 import { Check } from "lucide-react";
 
+const AERIAL_IMG = "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&auto=format";
+
 export const SolutionSection = () => {
   return (
-    <section className="py-24 sm:py-32 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="py-24 sm:py-32 bg-white relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-[0.015]">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(#1565C0 1px, transparent 1px), linear-gradient(90deg, #1565C0 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-sm font-medium uppercase tracking-widest text-[#1565C0] mb-3">
             The Solution
@@ -18,7 +32,7 @@ export const SolutionSection = () => {
         </div>
 
         {/* Plot Status Indicators */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-16">
           {solutionData.indicators.map((indicator, index) => (
             <div
               key={index}
@@ -46,8 +60,9 @@ export const SolutionSection = () => {
           ))}
         </div>
 
-        {/* Visual Board Preview */}
-        <div className="mt-16 max-w-lg mx-auto">
+        {/* Visual Board Preview with Real Estate Image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          {/* Plot Board */}
           <div className="bg-slate-50 rounded-2xl border border-gray-100 p-6 shadow-sm">
             <div className="flex items-center justify-between mb-5">
               <div>
@@ -67,7 +82,7 @@ export const SolutionSection = () => {
               ].map((status, i) => (
                 <div
                   key={i}
-                  className="aspect-square rounded-md transition-transform duration-200 hover:scale-110"
+                  className="aspect-square rounded-md transition-transform duration-200 hover:scale-110 cursor-pointer"
                   style={{
                     backgroundColor:
                       status === "green"
@@ -85,6 +100,37 @@ export const SolutionSection = () => {
                   }}
                 />
               ))}
+            </div>
+            {/* Legend */}
+            <div className="flex items-center justify-center gap-5 mt-4 pt-4 border-t border-gray-100">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-sm bg-green-400" />
+                <span className="text-[10px] text-slate-400">Available</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-sm bg-yellow-400" />
+                <span className="text-[10px] text-slate-400">Booked</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-sm bg-red-400" />
+                <span className="text-[10px] text-slate-400">Sold</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Real Estate Image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src={AERIAL_IMG}
+              alt="Modern real estate development"
+              className="w-full h-72 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/60 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <p className="text-white text-sm font-semibold mb-1">Real-time visibility</p>
+              <p className="text-white/70 text-xs">
+                See every plot's status across your projects — no phone calls needed.
+              </p>
             </div>
           </div>
         </div>
