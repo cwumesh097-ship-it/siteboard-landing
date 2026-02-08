@@ -58,8 +58,8 @@ export const SignupForm = () => {
     return (
       <section id="signup-form" className="py-24 sm:py-32 bg-slate-50">
         <div className="max-w-md mx-auto px-6 text-center">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-teal-50 flex items-center justify-center">
-            <CheckCircle2 className="w-8 h-8 text-teal-700" />
+          <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-blue-50 flex items-center justify-center">
+            <CheckCircle2 className="w-8 h-8 text-[#1565C0]" />
           </div>
           <h3 className="text-2xl font-bold text-slate-900 mb-3">
             You're on the list!
@@ -105,7 +105,7 @@ export const SignupForm = () => {
                   placeholder={field.placeholder}
                   value={formValues[field.name]}
                   onChange={handleChange}
-                  className="h-11 border-gray-200 focus:border-teal-500 focus:ring-teal-500 rounded-lg text-slate-800 placeholder:text-slate-300"
+                  className="h-11 border-gray-200 focus:border-[#1565C0] focus:ring-[#1565C0] rounded-lg text-slate-800 placeholder:text-slate-300"
                 />
               </div>
             ))}
@@ -114,7 +114,7 @@ export const SignupForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="mt-7 w-full group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-teal-700 rounded-xl hover:bg-teal-800 transition-all duration-200 shadow-lg shadow-teal-700/15 hover:shadow-xl hover:shadow-teal-700/25 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="mt-7 w-full group inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-[#1565C0] rounded-xl hover:bg-[#0D47A1] transition-all duration-200 shadow-lg shadow-blue-600/15 hover:shadow-xl hover:shadow-blue-600/25 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? (
               <span className="flex items-center gap-2">
