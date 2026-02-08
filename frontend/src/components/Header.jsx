@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { siteConfig } from "../data/mock";
-import { LayoutDashboard } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_real-estate-preview/artifacts/tjyon02e_ChatGPT%20Image%20Feb%208%2C%202026%2C%2002_18_41%20PM.png";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,20 +29,17 @@ export const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-lg bg-teal-700 flex items-center justify-center">
-            <LayoutDashboard className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <span className="text-lg font-semibold text-slate-900 tracking-tight">
-              {siteConfig.name}
-            </span>
-          </div>
-        </div>
+      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+        <button onClick={() => navigate("/")} className="flex items-center gap-1 cursor-pointer">
+          <img
+            src={LOGO_URL}
+            alt={siteConfig.name}
+            className="h-10 w-auto object-contain"
+          />
+        </button>
         <button
           onClick={scrollToForm}
-          className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-teal-700 rounded-lg hover:bg-teal-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+          className="hidden sm:inline-flex items-center px-5 py-2.5 text-sm font-medium text-white bg-[#1565C0] rounded-lg hover:bg-[#0D47A1] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
         >
           Get Early Access
         </button>
